@@ -23,5 +23,6 @@
     </logging>
     <php>
         <env name="ROOT_DIR" value="./"/>
+        <env name="EXCEPTION_HANDLER" value="App\Exceptions\ExceptionHandler" />
     </php>
 </phpunit>
