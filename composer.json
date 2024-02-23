@@ -48,6 +48,12 @@
             "@phpunit",
             "@phpstan",
             "@cs"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
+        ],
+        "post-create-project-cmd": [
+          "@php bin/zaphyr app:key"
         ]
     },
     "config": {
