@@ -15,7 +15,9 @@ class ExceptionHandler extends BaseExceptionHandler
      */
     protected function renderHtmlView(ResponseInterface $response, Throwable $throwable): ResponseInterface
     {
-        return view($this->application, 'errors/' . $this->determineStatusCode($throwable));
+        $statusCode = $this->determineStatusCode($throwable);
+
+        return view($this->application, 'errors/' . $statusCode, statusCode: $statusCode);
     }
 
     /**

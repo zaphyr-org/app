@@ -72,7 +72,9 @@ class ExceptionHandlerTest extends TestCase
             ->with('views/errors/404.html')
             ->willReturn(dirname(__DIR__, 3) . '/resources/views/errors/404.html');
 
-        $this->exceptionHandler->render($this->serverRequestMock, new NotFoundException());
+        $response = $this->exceptionHandler->render($this->serverRequestMock, new NotFoundException());
+
+        self::assertEquals(404, $response->getStatusCode());
     }
 
     public function test405Error(): void
@@ -82,7 +84,9 @@ class ExceptionHandlerTest extends TestCase
             ->with('views/errors/405.html')
             ->willReturn(dirname(__DIR__, 3) . '/resources/views/errors/405.html');
 
-        $this->exceptionHandler->render($this->serverRequestMock, new MethodNotAllowedException());
+        $response = $this->exceptionHandler->render($this->serverRequestMock, new MethodNotAllowedException());
+
+        self::assertEquals(405, $response->getStatusCode());
     }
 
     public function test500Error(): void
@@ -92,6 +96,8 @@ class ExceptionHandlerTest extends TestCase
             ->with('views/errors/500.html')
             ->willReturn(dirname(__DIR__, 3) . '/resources/views/errors/500.html');
 
-        $this->exceptionHandler->render($this->serverRequestMock, new Exception());
+        $response = $this->exceptionHandler->render($this->serverRequestMock, new Exception());
+
+        self::assertEquals(500, $response->getStatusCode());
     }
 }
