@@ -16,25 +16,10 @@ $application = new Zaphyr\Framework\Application(dirname(__DIR__));
 $container = $application->getContainer();
 
 // Bind important interfaces
-$container->bindSingleton(
-    HttpKernelInterface::class,
-    HttpKernel::class
-);
-
-$container->bindSingleton(
-    ConsoleKernelInterface::class,
-    ConsoleKernel::class
-);
-
-$container->bindSingleton(
-    ExceptionHandlerInterface::class,
-    ExceptionHandler::class
-);
-
-$container->bindSingleton(
-    EmitterInterface::class,
-    SapiEmitter::class
-);
+$container->bindSingleton(HttpKernelInterface::class, HttpKernel::class);
+$container->bindSingleton(ConsoleKernelInterface::class, ConsoleKernel::class);
+$container->bindSingleton(ExceptionHandlerInterface::class, ExceptionHandler::class);
+$container->bindSingleton(EmitterInterface::class, SapiEmitter::class);
 
 // Return bootstrapped application instance
 return $application;
