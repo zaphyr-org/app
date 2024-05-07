@@ -21,6 +21,9 @@ class WelcomeController
     #[Get(path: '/', name: 'welcome')]
     public function indexAction(): HtmlResponse
     {
-        return view($this->application, 'welcome', ['version' => Application::VERSION]);
+        return view($this->application, 'welcome', [
+            'php_version' => phpversion(),
+            'version' => Application::VERSION,
+        ]);
     }
 }
