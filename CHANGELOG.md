@@ -2,11 +2,17 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 🔥 v1.0.0-alpha.1 [2024-05-06]
+## 🔥 v1.0.0-alpha.2 [2024-05-11]
 
-> [!WARNING]
-> This release contains the latest development changes, but you should be prepared for anything,
-> including sudden breaking changes or code refactoring.
+### New:
+* Added favicon.ico to public directory
+* Added PHP version to welcome view
+* Added HTTPS and www redirect examples to .htaccess
+
+### Changed:
+* Set `null` as default cookie domain configuration
+
+## 🔥 v1.0.0-alpha.1 [2024-05-06]
 
 ### New:
 * Initial commit
