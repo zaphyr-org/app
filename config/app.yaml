@@ -12,8 +12,8 @@ url: '%env:APP_URL%'
 env: '%env:APP_ENV%'
 debug: '%env:APP_DEBUG%'
 debug_blacklist: [ ]
-timezone: UTC
-charset: UTF-8
+timezone: '%env:APP_TIMEZONE%'
+charset: '%env:APP_CHARSET%'
 
 #-------------------------------------------------------
 # ENCRYPTION
@@ -27,7 +27,7 @@ charset: UTF-8
 
 encryption:
     key: '%env:APP_KEY%'
-    cipher: AES-256-CBC
+    cipher: '%env:APP_CIPHER%'
 
 #-------------------------------------------------------
 # SERVICE PROVIDERS
