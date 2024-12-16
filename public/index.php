@@ -16,7 +16,7 @@ if (file_exists($maintenance = __DIR__ . '/maintenance.html')) {
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Get bootstrapped application instance
-$application = require_once __DIR__ . '/../src/bootstrap.php';
+$application = require_once __DIR__ . '/../app/bootstrap.php';
 $container = $application->getContainer();
 
 // Handle HTTP request

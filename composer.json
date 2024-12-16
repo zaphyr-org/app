@@ -28,10 +28,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "app/"
         },
         "files": [
-            "src/functions.php"
+            "app/functions.php"
         ]
     },
     "autoload-dev": {
@@ -40,8 +40,8 @@
         }
     },
     "scripts": {
-        "cs": "vendor/bin/phpcs --standard=PSR12 -n src",
-        "cbf": "vendor/bin/phpcbf --standard=PSR12 -n src",
+        "cs": "vendor/bin/phpcs --standard=PSR12 -n app",
+        "cbf": "vendor/bin/phpcbf --standard=PSR12 -n app",
         "phpunit": "vendor/bin/phpunit --colors=always",
         "phpstan": "vendor/bin/phpstan analyse --memory-limit 512M",
         "test": [
@@ -53,7 +53,7 @@
             "@php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
         ],
         "post-create-project-cmd": [
-          "@php bin/zaphyr app:key"
+            "@php bin/zaphyr app:key"
         ]
     },
     "config": {

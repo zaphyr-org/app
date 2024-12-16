@@ -9,7 +9,7 @@ use Zaphyr\Framework\Contracts\Kernel\ConsoleKernelInterface;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // Get bootstrapped application instance
-$application = require_once __DIR__ . '/../src/bootstrap.php';
+$application = require_once __DIR__ . '/../app/bootstrap.php';
 
 // Handle console command
 exit($application->getContainer()->get(ConsoleKernelInterface::class)->handle());
