@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 🔥 v1.0.0-alpha.2 [2024-05-11]
+## 🔥 [v1.0.0-alpha.3](https://github.com/zaphyr-org/app/compare/1.0.0-alpha.2...1.0.0-alpha.3) [2024-12-22]
+
+### Changed:
+* Moved timezone, charset and encryption cipher values to .env
+* Changed app source code directory from `src` to `app`
+
+## 🔥 [v1.0.0-alpha.2](https://github.com/zaphyr-org/app/compare/1.0.0-alpha.1...1.0.0-alpha.2) [2024-05-11]
 
 ### New:
 * Added favicon.ico to public directory
