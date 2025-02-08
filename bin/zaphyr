@@ -1,15 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-declare(strict_types=1);
+use Zaphyr\Framework\Application;
 
-use Zaphyr\Framework\Contracts\Kernel\ConsoleKernelInterface;
-
-// Require Composer autoload
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Get bootstrapped application instance
+/** @var Application $application */
 $application = require_once __DIR__ . '/../app/bootstrap.php';
-
-// Handle console command
-exit($application->getContainer()->get(ConsoleKernelInterface::class)->handle());
+exit($application->handleCommand());

@@ -39,6 +39,18 @@
             "AppTests\\": "tests/"
         }
     },
+    "extra": {
+        "zaphyr": {
+            "paths": {
+                "app": "app/",
+                "bin": "bin/",
+                "config": "config/",
+                "public": "public/",
+                "resources": "resources/",
+                "storage": "storage/"
+            }
+        }
+    },
     "scripts": {
         "cs": "vendor/bin/phpcs --standard=PSR12 -n app",
         "cbf": "vendor/bin/phpcbf --standard=PSR12 -n app",
