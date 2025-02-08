@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use Zaphyr\Framework\Application;
 use Zaphyr\Framework\Contracts\ApplicationInterface;
 use Zaphyr\Framework\Http\HtmlResponse;
 use Zaphyr\Router\Attributes\Get;
+use Zaphyr\Utils\Exceptions\UtilsException;
 
 class WelcomeController
 {
@@ -18,12 +18,15 @@ class WelcomeController
     {
     }
 
+    /**
+     * @throws UtilsException if the view file is not found
+     */
     #[Get(path: '/', name: 'welcome')]
     public function indexAction(): HtmlResponse
     {
         return view($this->application, 'welcome', [
             'php_version' => phpversion(),
-            'version' => Application::VERSION,
+            'zaphyr_version' => $this->application->getVersion(),
         ]);
     }
 }

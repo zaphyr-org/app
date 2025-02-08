@@ -7,11 +7,14 @@ namespace App\Exceptions;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 use Zaphyr\Framework\Exceptions\Handlers\ExceptionHandler as BaseExceptionHandler;
+use Zaphyr\Utils\Exceptions\UtilsException;
 
 class ExceptionHandler extends BaseExceptionHandler
 {
     /**
      * {@inheritdoc}
+     *
+     * @throws UtilsException if the view file is not found
      */
     protected function renderHtmlView(ResponseInterface $response, Throwable $throwable): ResponseInterface
     {

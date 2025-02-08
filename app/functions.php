@@ -15,7 +15,7 @@ if (!function_exists('view')) {
      * @param array<string, string> $data
      * @param int                   $statusCode
      *
-     * @throws UtilsException if the view could not be rendered
+     * @throws UtilsException if the view file is not found
      * @return HtmlResponse
      */
     function view(
