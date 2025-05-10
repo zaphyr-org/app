@@ -10,7 +10,7 @@
     </testsuites>
     <source>
         <include>
-            <directory suffix=".php">./src</directory>
+            <directory suffix=".php">./app</directory>
         </include>
     </source>
     <coverage>
@@ -23,6 +23,6 @@
     </logging>
     <php>
         <env name="ROOT_PATH" value="./"/>
-        <env name="EXCEPTION_HANDLER" value="App\Exceptions\ExceptionHandler" />
+        <env name="EXCEPTION_HANDLER" value="App\Exceptions\ExceptionHandler"/>
     </php>
 </phpunit>
