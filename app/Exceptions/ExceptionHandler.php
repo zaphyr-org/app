@@ -20,7 +20,7 @@ class ExceptionHandler extends BaseExceptionHandler
     {
         $statusCode = $this->determineStatusCode($throwable);
 
-        return view($this->application, 'errors/' . $statusCode, statusCode: $statusCode);
+        return view('errors/' . $statusCode, statusCode: $statusCode);
     }
 
     /**

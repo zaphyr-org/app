@@ -11,5 +11,5 @@ if (file_exists($maintenance = __DIR__ . '/maintenance.html')) {
 require_once __DIR__ . '/../vendor/autoload.php';
 
 /** @var Application $application */
-$application = require_once __DIR__ . '/../app/bootstrap.php';
+$application = require __DIR__ . '/../app/bootstrap.php';
 $application->handleRequest(Request::fromGlobals());
