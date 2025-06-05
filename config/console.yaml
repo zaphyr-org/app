@@ -1,0 +1,32 @@
+#-------------------------------------------------------
+# COMMANDS
+#-------------------------------------------------------
+#
+# Define additional console commands for your
+# application here. By default, commands are loaded
+# automatically from the 'app/Commands' directory.
+#
+# You may also list specific command classes to load:
+#
+# commands:
+#     - App\Commands\ExampleCommand
+#     - App\Commands\AnotherCommand
+#
+
+commands: '%path:app%/Commands'
+
+#-------------------------------------------------------
+# COMMANDS IGNORE
+#-------------------------------------------------------
+#
+# Use 'commands_ignore' to exclude specific console
+# commands. This is useful in cases where certain
+# commands are not needed for specific environments
+# or deployment scenarios.
+#
+# commands_ignore:
+#     - Zaphyr\Framework\Console\Commands\Config\CacheCommand
+#     - Zaphyr\Framework\Console\Commands\Config\ClearCommand
+#
+
+commands_ignore: [ ]

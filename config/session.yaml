@@ -1,0 +1,144 @@
+#-------------------------------------------------------
+# NAME
+#-------------------------------------------------------
+#
+# This option sets the name of the session cookie
+# used to identify a session instance. A custom
+# name can help prevent conflicts with other
+# applications running on the same domain.
+#
+
+name: '%env:SESSION_NAME%'
+
+#-------------------------------------------------------
+# EXPIRE
+#-------------------------------------------------------
+#
+# Specifies the session and cookie lifetime in minutes.
+# After this time, the session or cookie will expire
+# and a new one will be created on the next request.
+#
+
+expire: '%env:SESSION_EXPIRE%'
+
+#-------------------------------------------------------
+# ENCRYPT
+#-------------------------------------------------------
+#
+# When enabled, session data will be encrypted
+# before being stored, providing additional security
+# for sensitive user data. Must be used with a
+# properly configured encryption key.
+#
+
+encrypt: '%env:SESSION_ENCRYPT%'
+
+#-------------------------------------------------------
+# DEFAULT HANDLER
+#-------------------------------------------------------
+#
+# Defines the default session handler the application
+# should use. Supported handlers include 'file' and
+# 'database'. This setting tells the framework where
+# to persist session data by default.
+#
+
+default_handler: '%env:SESSION_DEFAULT_HANDLER%'
+
+#-------------------------------------------------------
+# HANDLERS
+#-------------------------------------------------------
+#
+# Define the available session storage handlers here.
+# Each handler must include the necessary configuration
+# options for its backend.
+#
+# Supported handlers include:
+# - file: Stores sessions as files on disk
+# - database: Persists session in a database table.
+#             The database handler requires the
+#             'doctrine/dbal' package
+#
+# You can read more about the handler configuration
+# in the documentation:
+# https://zaphyr.org/docs/repositories/latest/session#session-handlers
+#
+
+handlers:
+    file:
+        path: '%path:storage%/sessions'
+    database:
+        connection: '%env:SESSION_DATABASE_CONNECTION%'
+#        options:
+#            table: sessions
+#            idColumn: id
+#            dataColumn: data
+#            timeColumn: time
+
+#-------------------------------------------------------
+# COOKIE PATH
+#-------------------------------------------------------
+#
+# Sets the default path on the domain where the cookie
+# will be available. Use '/' to make it accessible
+# throughout the entire domain.
+#
+
+cookie_path: /
+
+#-------------------------------------------------------
+# COOKIE DOMAIN
+#-------------------------------------------------------
+#
+# Specifies the domain that the cookie is available to.
+# This can be used to share cookies across subdomains.
+#
+
+cookie_domain: null
+
+#-------------------------------------------------------
+# COOKIE SECURE
+#-------------------------------------------------------
+#
+# When set to 'true', the cookie will only be sent
+# over secure HTTPS connections.
+#
+
+cookie_secure: false
+
+#-------------------------------------------------------
+# COOKIE HTTP ONLY
+#-------------------------------------------------------
+#
+# When enabled, the cookie is only accessible via
+# HTTP(S) and not available to JavaScript (e.g., via
+# document.cookie). Enhances protection from XSS.
+#
+
+cookie_http_only: true
+
+#-------------------------------------------------------
+# COOKIE RAW
+#-------------------------------------------------------
+#
+# If 'true', the cookie value will not be URL-encoded.
+# Useful if the data being stored does not require
+# encoding or should be sent exactly as-is.
+#
+
+cookie_raw: false
+
+#-------------------------------------------------------
+# COOKIE SAME SITE
+#-------------------------------------------------------
+#
+# Controls whether the cookie is sent with cross-site
+# requests. This can help mitigate CSRF attacks.
+#
+# Available options are:
+# - lax: Sent with top-level navigation
+# - strict: Only sent in same-site contexts
+# - none: Sent with all requests
+#
+
+cookie_same_site: lax

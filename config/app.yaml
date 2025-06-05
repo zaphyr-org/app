@@ -1,116 +1,98 @@
 #-------------------------------------------------------
-# DEFAULTS
+# NAME
 #-------------------------------------------------------
-# This section establishes the core settings of your
-# application. It includes the application's name, URL,
-# operating environment, and debug mode. Additional
-# settings like timezone and character set are also
-# specified here.
+#
+# Although not directly used by the framework, the
+# application name can appear in various areas such
+# as the HTML title tag or email templates.
+#
 
 name: '%env:APP_NAME%'
+
+#-------------------------------------------------------
+# URL
+#-------------------------------------------------------
+#
+# The base URL is used for generating absolute URLs.
+# Typically, it's set to the root domain such as
+# 'https://example.com'.
+#
+
 url: '%env:APP_URL%'
+
+#-------------------------------------------------------
+# ENVIRONMENT
+#-------------------------------------------------------
+#
+# Defines the environment the app is running in,
+# like 'development', 'testing', or 'production'.
+# Useful for loading environment-specific configurations.
+#
+
 env: '%env:APP_ENV%'
+
+#-------------------------------------------------------
+# DEBUG MODE
+#-------------------------------------------------------
+#
+# Enables or disables debug mode. When 'true', it
+# displays detailed error messages. Set it to 'false'
+# in production to avoid exposing sensitive information.
+#
+
 debug: '%env:APP_DEBUG%'
-debug_blacklist: [ ]
+
+#-------------------------------------------------------
+# DEBUG BLACKLIST
+#-------------------------------------------------------
+#
+# Specifies environment variables to hide from
+# debug output to prevent sensitive data leaks.
+# Applies to _ENV, _SERVER and request input data.
+#
+
+debug_blacklist:
+    _ENV:
+        - APP_KEY
+    _SERVER:
+        - APP_KEY
+
+#-------------------------------------------------------
+# TIMEZONE
+#-------------------------------------------------------
+#
+# Sets the default timezone for the application.
+# Defaults to 'UTC', but can be changed to match
+# your local region or business requirements.
+#
+
 timezone: '%env:APP_TIMEZONE%'
+
+#-------------------------------------------------------
+# CHARSET
+#-------------------------------------------------------
+#
+# Specifies the character encoding used by the
+# application. 'UTF-8' is recommended, supporting most
+# global characters and symbols reliably.
+#
+
 charset: '%env:APP_CHARSET%'
 
 #-------------------------------------------------------
-# ENCRYPTION
+# ENCRYPTION KEY
 #-------------------------------------------------------
-# Essential for securing session and cookie data, this
-# section defines the encryption parameters. For security
-# reasons, you should never save the encryption key in
-# your version control software. Therefore, the key is
-# defined in the .env file and referenced here.
-# The default encryption cipher used is AES-256-CBC.
+#
+# Defines the encryption settings used throughout
+# the application to secure sensitive data. This
+# includes, but is not limited to, sessions and cookies.
+#
+# The key must be kept secret and should never be
+# committed to version control, It is stored in the
+# .env filed and referenced here. The default cipher
+# is 'AES-256-CBC', through 'AES-128-CBC' is also supported.
+#
 
 encryption:
     key: '%env:APP_KEY%'
     cipher: '%env:APP_CIPHER%'
-
-#-------------------------------------------------------
-# SERVICE PROVIDERS
-#-------------------------------------------------------
-# Enhance your application with additional functionality
-# by configuring service providers here. The path to the
-# service providers directory is defined, enabling
-# automatic registration of all included providers.
-# Exclude specific providers using the 'providers_ignore'
-# option.
-
-services:
-    providers: '%path:app%/Providers'
-    providers_ignore: [ ]
-
-#-------------------------------------------------------
-# CONSOLE COMMANDS
-#-------------------------------------------------------
-# Configure additional console commands for your
-# application in this section. A directory path for
-# storing these commands is specified, with an option
-# to ignore certain commands as needed.
-
-console:
-    commands: '%path:app%/Commands'
-    commands_ignore: [ ]
-
-#-------------------------------------------------------
-# ROUTING
-#-------------------------------------------------------
-# This section is dedicated to the application's routing
-# configuration. Define paths for controllers and global
-# middleware. Exclude certain global middleware using
-# 'middleware_ignore'. Route patterns can also be
-# configured here for consistent URL structuring.
-
-routing:
-    controllers: '%path:app%/Controllers'
-    middleware: '%path:app%/Middleware'
-    middleware_ignore: [ ]
-    patterns:
-        slug: '[a-z0-9-]+'
-
-#-------------------------------------------------------
-# SESSION AND COOKIES
-#-------------------------------------------------------
-# Configure session and cookie settings here.
-# Pre-configurations are provided for immediate use,
-# including session name, expiration, encryption, and
-# handling.
-
-session:
-    name: '%env:APP_NAME%_session'
-    expire: 120
-    encrypt: true
-    default_handler: file
-    handlers:
-        file:
-            path: '%path:storage%/sessions'
-    cookie:
-        path: /
-        domain: null
-        secure: true
-        http_only: true
-        raw: false
-        same_site: strict
-
-#-------------------------------------------------------
-# LOGGING
-#-------------------------------------------------------
-# Keep track of application activities with integrated
-# logging. Configure logging channels and specify
-# exceptions that should be excluded from logging here.
-
-logging:
-    default_channel: app
-    channels:
-        app:
-            handlers:
-                rotate:
-                    directory: '%path:storage%/logs'
-                    interval: day
-    ignore:
-        - Zaphyr\Framework\Contracts\Http\Exceptions\HttpExceptionInterface
-        - Zaphyr\Router\Exceptions\MethodNotAllowedException
-        - Zaphyr\Router\Exceptions\NotFoundException

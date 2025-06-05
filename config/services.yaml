@@ -1,0 +1,32 @@
+#-------------------------------------------------------
+# SERVICE PROVIDERS
+#-------------------------------------------------------
+#
+# Enhance your application with additional features,
+# by configuring service providers here. By default,
+# they are loader form the 'app/Providers' directory,
+# so you don't need to register them manually.
+#
+# You may also define specific providers to load:
+#
+# providers:
+#     - App\Providers\AppServiceProvider
+#     - App\Providers\AuthServiceProvider
+#
+
+providers: '%path:app%/Providers'
+
+#-------------------------------------------------------
+# SERVICE PROVIDERS IGNORE
+#-------------------------------------------------------
+#
+# Use the 'providers_ignore' option to exclude specific
+# providers. This can be helpful in different
+# environments or when certain providers are not needed:
+#
+# providers_ignore:
+#     - Zaphyr\Framework\Providers\SessionServiceProvider
+#     - Zaphyr\Framework\Providers\CookieServiceProvider
+#
+
+providers_ignore: [ ]

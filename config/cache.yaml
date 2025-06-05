@@ -1,0 +1,51 @@
+#-------------------------------------------------------
+# DEFAULT STORE
+#-------------------------------------------------------
+#
+# Specifies the default cache store to use for storing
+# cached data. This store will be used whenever a
+# specific store is not defined in the code.
+#
+# Available options are 'file', 'redis', and 'array'.
+#
+
+default_store: '%env:CACHE_DEFAULT_STORE%'
+
+#-------------------------------------------------------
+# EVENTS
+#-------------------------------------------------------
+#
+# Enables or disables cache event dispatching. When
+# enabled, events are triggered on cache operations
+# such as hits, misses, writes and deletions.
+#
+# This can be used for logging, metrics, or debugging.
+#
+
+events: '%env:CACHE_EVENTS%'
+
+#-------------------------------------------------------
+# STORES
+#-------------------------------------------------------
+#
+# Defines the available cache store configurations.
+# Each store can be configured independently.
+#
+# Supported cache drivers include:
+# - file: Stores cached items on the local filesystem
+# - redis: Uses Redis for fast, distributed caching
+#          The Redis store requires the 'predis/predis'
+#          package
+# - array: In-memory cache for testing or temporary use
+#
+# You can read more about the cache store configurations
+# in the documentation:
+# https://zaphyr.org/docs/repositories/latest/cache#cache-stores
+#
+
+stores:
+    file:
+        path: '%path:storage%/cache'
+    redis:
+        connection: '%env:CACHE_REDIS_CONNECTION%'
+        prefix: '%env:CACHE_PREFIX%'

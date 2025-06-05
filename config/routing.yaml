@@ -1,0 +1,82 @@
+#-------------------------------------------------------
+# CONTROLLERS
+#-------------------------------------------------------
+#
+# This section defines how the framework loads
+# application controllers. Controllers handle
+# incoming HTTP requests and return responses.
+#
+# You can set the 'controllers' value to a directory
+# path (e.g., app/Controllers) for automatic discovery.
+#
+# Alternatively, you may provide an explicit array of
+# fully qualified controller class names to be loaded.
+# This is useful when using custom directory structures
+# or selective controller registration.
+#
+# controllers:
+#   - App\Controllers\HomeController
+#   - App\Controllers\UserController
+#
+
+controllers: '%path:app%/Controllers'
+
+#-------------------------------------------------------
+# CONTROLLERS IGNORE
+#-------------------------------------------------------
+#
+# Use 'controllers_ignore' to exclude specific
+# controllers from registration. Helpfully for
+# conditional disabling certain routes in specific
+# environments.
+#
+# controllers_ignore:
+#   - App\Controllers\DebugController
+#
+
+controllers_ignore: [ ]
+
+#-------------------------------------------------------
+# GLOBAL MIDDLEWARE
+#-------------------------------------------------------
+#
+# Define global middleware that runs before and after
+# every request. Middleware can be used for handling
+# authentication, logging, CORS, and more.
+#
+# Like controllers, you can set this to a directory path
+# (e.g., app/Middleware) or provide an array of
+# fully qualified middleware class names.
+#
+# middleware:
+#   - App\Middleware\AuthMiddleware
+#   - App\Middleware\CorsMiddleware
+#
+
+middleware: '%path:app%/Middleware'
+
+#-------------------------------------------------------
+# MIDDLEWARE IGNORE
+#-------------------------------------------------------
+#
+# Use 'middleware_ignore' to exclude specific global
+# middleware classes from being applied. This is useful
+# for disabling default middleware in certain scenarios.
+#
+# middleware_ignore:
+#   - App\Middleware\DebugMiddleware
+#
+
+middleware_ignore: [ ]
+
+#-------------------------------------------------------
+# PATTERNS
+#-------------------------------------------------------
+#
+# Define reusable route parameter patterns here.
+# For example, the 'slug' pattern can be used in
+# route definitions to enforce consistent URL formats.
+#
+
+patterns:
+    slug: '[a-z0-9-]+'

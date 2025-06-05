@@ -1,0 +1,33 @@
+#-------------------------------------------------------
+# EVENT LISTENERS
+#-------------------------------------------------------
+#
+# Configure event listeners that respond to various
+# application events. Listeners can react to specific
+# stages in the app's lifecycle and may be assigned a
+# priority to control their execution order.
+#
+# listeners:
+#    Zaphyr\Framework\Events\Http\RequestStartingEvent:
+#        - App\Listeners\RequestStartingListener
+#    Zaphyr\Framework\Events\Http\RequestFinishedEvent:
+#        - { listener: App\Listeners\RequestFinishedListener, priority: 100 }
+#
+
+listeners: [ ]
+
+#-------------------------------------------------------
+# EVENT LISTENERS IGNORE
+#-------------------------------------------------------
+#
+# Defines listeners you want to disable for specific
+# events. This is useful in environments where certain
+# listeners should not be triggered or need to be
+# conditionally excluded.
+#
+# listeners_ignore:
+#    Zaphyr\Framework\Events\Http\RequestStartingEvent:
+#        - App\Listeners\RequestStartingListener
+#
+
+listeners_ignore: [ ]

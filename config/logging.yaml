@@ -1,0 +1,82 @@
+#-------------------------------------------------------
+# DEFAULT CHANNELS
+#-------------------------------------------------------
+#
+# Keep track of application activities with integrated
+# logging. This option sets the default logging channel
+# that will be used when no specific channel is defined.
+#
+
+default_channel: '%env:LOG_DEFAULT_CHANNEL%'
+
+#-------------------------------------------------------
+# CHANNELS
+#-------------------------------------------------------
+#
+# Define the available logging channels used by the
+# application. Each channel can have one or more
+# handlers, which determine how and where log messages
+# are written.
+#
+# Supported handlers include:
+# - rotate: Rotating file logs by time interval
+# - file: Write logs to a specific log file
+# - mail: Send log messages via email
+#
+# Each handler supports configuration, such as level,
+# file paths, email details and rotating intervals.
+#
+# You can read more about the handler configuration
+# in the documentation:
+# https://zaphyr.org/docs/repositories/latest/logger#handlers
+#
+# Supported log levels include:
+# - emergency: System is unusable
+# - alert: Action must be taken immediately
+# - critical: Critical conditions
+# - error: Error conditions
+# - warning: Warning conditions
+# - notice: Normal but significant condition
+# - info: Informational messages
+# - debug: Debug-level messages
+#
+
+channels:
+    daily:
+        handlers:
+            rotate:
+                directory: '%path:storage%/logs'
+                interval: day # hour, day, week, month, year
+                level: '%env:LOG_LEVEL%'
+                formatter: Zaphyr\Logger\Formatters\LineFormatter
+    single:
+        handlers:
+            file:
+                filename: '%path:storage%/logs/zaphyr.log'
+                level: '%env:LOG_LEVEL%'
+                formatter: Zaphyr\Logger\Formatters\LineFormatter
+    mailer:
+        handlers:
+            mail:
+                dsn: '%env:LOG_MAIL_CONNECTION%'
+                from: '%env:LOG_MAIL_FROM%'
+                to: '%env:LOG_MAIL_TO%'
+                subject: '%env:LOG_MAIL_SUBJECT%'
+                level: '%env:LOG_LEVEL%'
+                formatter: Zaphyr\Logger\Formatters\HtmlFormatter
+
+#-------------------------------------------------------
+# IGNORE EXCEPTIONS
+#-------------------------------------------------------
+#
+# Specify exceptions that should be excluded from
+# logging. This helps avoid log noise from expected or
+# non-critical exceptions such as 404s or validation
+# errors. Exceptions listed here will be ignored by
+# all configured channels.
+#
+
+ignore:
+    - Zaphyr\Framework\Contracts\Http\Exceptions\HttpExceptionInterface
+    - Zaphyr\Router\Exceptions\MethodNotAllowedException
+    - Zaphyr\Router\Exceptions\NotFoundException
