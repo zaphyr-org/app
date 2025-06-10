@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 🔥 [v1.0.0-alpha.4](https://github.com/zaphyr-org/app/compare/1.0.0-alpha.4...1.0.0-alpha.5) [2025-05-10]
+## 🔥 [v1.0.0-alpha.6](https://github.com/zaphyr-org/app/compare/1.0.0-alpha.5...1.0.0-alpha.6) [2025-06-10]
+
+### New:
+
+* Added `zaphyr-org/plugin-installer` to allowed composer plugins
+
+### Changed:
+
+* Improved application configuration files
+* Removed default logs and sessions directory from storage directory
+
+## 🔥 [v1.0.0-alpha.5](https://github.com/zaphyr-org/app/compare/1.0.0-alpha.4...1.0.0-alpha.5) [2025-05-10]
 
 ### Changed:
 
