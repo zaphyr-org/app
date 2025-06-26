@@ -80,3 +80,14 @@ middleware_ignore: [ ]
 
 patterns:
     slug: '[a-z0-9-]+'
+
+#-------------------------------------------------------
+# CSRF IGNORE PATHS
+#-------------------------------------------------------
+#
+# Define paths that should be excluded from CSRF
+# protection. This is useful for API endpoints or
+# other routes where CSRF tokens are not required.
+#
+
+csrf_ignore: [ ]
