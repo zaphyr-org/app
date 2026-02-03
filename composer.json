@@ -18,6 +18,14 @@
     ],
     "require": {
         "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-dom": "*",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-simplexml": "*",
         "zaphyr-org/framework": "^1.0@alpha"
     },
     "require-dev": {

@@ -1,11 +1,11 @@
 > [!WARNING]
 > The app does not yet have a stable version. It is still under development.
 
-![License](https://img.shields.io/github/license/zaphyr-org/app?style=for-the-badge)
-![Version](https://img.shields.io/packagist/v/zaphyr-org/app?style=for-the-badge)
-![Downloads](https://img.shields.io/packagist/dt/zaphyr-org/app?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/zaphyr-org/app?style=for-the-badge)
-![Issues](https://img.shields.io/github/issues/zaphyr-org/app?style=for-the-badge)
+![License](https://img.shields.io/github/license/zaphyr-org/app)
+![Version](https://img.shields.io/packagist/v/zaphyr-org/app)
+![Issues](https://img.shields.io/github/issues/zaphyr-org/app)
+![Tests](https://github.com/zaphyr-org/app/actions/workflows/tests.yml/badge.svg)
+[![Codecov](https://codecov.io/gh/zaphyr-org/app/graph/badge.svg?token=2STP40KC71)](https://codecov.io/gh/zaphyr-org/app)
 
 # Skeleton Application
 
@@ -34,6 +34,14 @@ Before you start, ensure the following are installed on your system:
 > [!TIP]
 > ZAPHYR requires PHP 8.1 as the minimum version. However, we recommend using the
 > [latest stable version of PHP](https://www.php.net/supported-versions.php) for the best experience.
+
+The app skeleton is continuously tested on the following PHP versions:
+
+- PHP 8.1
+- PHP 8.2
+- PHP 8.3
+- PHP 8.4
+- PHP 8.5
 
 ## Installation
 
@@ -84,7 +92,8 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Issues
 
-Bug reports and feature requests can be submitted on the [GitHub Issue Tracker](https://github.com/zaphyr-org/app/issues).
+Bug reports and feature requests can be submitted on
+the [GitHub Issue Tracker](https://github.com/zaphyr-org/app/issues).
 
 ## Security
 

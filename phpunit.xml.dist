@@ -13,16 +13,7 @@
             <directory suffix=".php">./app</directory>
         </include>
     </source>
-    <coverage>
-        <report>
-            <html outputDirectory="./tests/report/code-coverage" lowUpperBound="50" highLowerBound="80"/>
-        </report>
-    </coverage>
-    <logging>
-        <testdoxHtml outputFile="./tests/report/testdox.html"/>
-    </logging>
     <php>
-        <env name="ROOT_PATH" value="./"/>
         <env name="EXCEPTION_HANDLER" value="App\Exceptions\ExceptionHandler"/>
     </php>
 </phpunit>
