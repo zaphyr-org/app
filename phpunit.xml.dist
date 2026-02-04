@@ -12,6 +12,9 @@
         <include>
             <directory suffix=".php">./app</directory>
         </include>
+        <exclude>
+            <file>./app/bootstrap.php</file>
+        </exclude>
     </source>
     <php>
         <env name="EXCEPTION_HANDLER" value="App\Exceptions\ExceptionHandler"/>
