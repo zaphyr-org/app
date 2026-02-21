@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use Zaphyr\Framework\Application;
 use Zaphyr\Framework\Http\HtmlResponse;
 use Zaphyr\Router\Attributes\Get;
 
 class WelcomeController
 {
-    #[Get(path: '/', name: 'welcome')]
+    #[Get('/')]
     public function indexAction(): HtmlResponse
     {
-        return view('welcome', ['php_version' => PHP_VERSION, 'zaphyr_version' => app()->getVersion()]);
+        return view('welcome', ['zaphyr_version' => Application::VERSION, 'php_version' => PHP_VERSION]);
     }
 }

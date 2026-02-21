@@ -4,27 +4,129 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ZAPHYR v%zaphyr_version%</title>
-    <style>*,::after,::before{margin:0;padding:0;box-sizing:border-box}body{display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:1em;color:#333;background:#f1f1f1}#wrapper{padding:2em;text-align:right}#logo{display:block;min-width:17em}</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #0d6efd;
+            --color-muted: #64748b;
+            --color-text: #0f172a;
+            --color-bg: #f8fafc;
+            --color-btn-text: var(--color-primary);
+            --color-btn-bg: rgba(13, 110, 253, 0.08);
+            --color-btn-hover-text: #ffffff;
+            --color-btn-hover-bg: var(--color-primary);
+            --radius: 0.25rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text: #e5e7eb;
+                --color-bg: #040a15;
+            }
+        }
+
+        *, ::before, ::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: "IBM Plex Sans", sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            padding: 2rem;
+        }
+
+        #wrapper {
+            width: 100%;
+            max-width: 720px;
+            text-align: center;
+        }
+
+        svg {
+            width: auto;
+            height: 28px;
+            margin-bottom: 1rem;
+        }
+
+        svg path,
+        svg polygon {
+            fill: var(--color-primary) !important;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.025em;
+            margin-bottom: 2rem;
+        }
+
+        #links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        #links a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--color-btn-text);
+            background: var(--color-btn-bg);
+            border-radius: var(--radius);
+            transition: all 0.25s ease;
+        }
+
+        #links a:hover {
+            color: var(--color-btn-hover-text);
+            background: var(--color-btn-hover-bg);
+        }
+
+        p small {
+            font-size: 80%;
+            color: var(--color-muted);
+        }
+    </style>
 </head>
 <body>
-<div id="wrapper">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1735.9 490" xml:space="preserve" id="logo">
-        <path fill="#0d6efd" d="M531.7,307.5l107.7-127.8H535.6v-41.4h160.5v41.4L590.5,307.5h109.2v43.2h-168V307.5z"/>
-        <path fill="#0d6efd" d="M801.7,138.3h38.7l92.4,212.4H880l-18.3-45h-82.5l-17.7,45h-51.6L801.7,138.3z M819.7,200.1l-25.8,66h51.9L819.7,200.1z"/>
-        <path fill="#0d6efd" d="M954.1,138.3h78.9c11,0,21.4,1,31.2,3c9.8,2,18.3,5.5,25.6,10.4c7.3,4.9,13.1,11.5,17.4,19.8c4.3,8.3,6.5,18.8,6.5,31.3c0,12.4-2,22.8-6,31.2c-4,8.4-9.5,15.1-16.5,20.1c-7,5-15.3,8.5-24.9,10.6c-9.6,2.1-20,3.2-31.2,3.2h-34.2v82.8h-46.8V138.3z M1000.9,228.3h31.2c4.2,0,8.2-0.4,12.2-1.2c3.9-0.8,7.4-2.1,10.5-4.1c3.1-1.9,5.6-4.5,7.5-7.8c1.9-3.3,2.8-7.4,2.8-12.5c0-5.4-1.3-9.8-3.8-13c-2.5-3.3-5.7-5.8-9.6-7.6c-3.9-1.8-8.2-2.9-13-3.5c-4.8-0.5-9.4-0.8-13.8-0.8h-24V228.3z"/>
-        <path fill="#0d6efd" d="M1143.1,138.3h46.8v79.2h90.9v-79.2h46.8v212.4h-46.8v-91.8h-90.9v91.8h-46.8V138.3z"/>
-        <path fill="#0d6efd" d="M1423,260.1l-79.8-121.8h58.2l45,79.5l47.7-79.5h55.5l-79.8,121.8v90.6H1423V260.1z"/>
-        <path fill="#0d6efd" d="M1565.2,138.3h82.2c10.8,0,21,1.1,30.8,3.2c9.7,2.1,18.2,5.6,25.5,10.5c7.3,4.9,13.1,11.5,17.4,19.8c4.3,8.3,6.5,18.7,6.5,31c0,15-3.9,27.8-11.7,38.2s-19.2,17.2-34.2,20l54,89.7h-56.1l-44.4-84.9H1612v84.9h-46.8V138.3zM1612,226.2h27.6c4.2,0,8.6-0.2,13.3-0.5c4.7-0.3,8.9-1.2,12.8-2.7c3.8-1.5,6.9-3.8,9.5-7c2.5-3.2,3.8-7.7,3.8-13.5c0-5.4-1.1-9.7-3.3-12.9c-2.2-3.2-5-5.6-8.4-7.4c-3.4-1.7-7.3-2.8-11.7-3.5c-4.4-0.6-8.7-0.9-12.9-0.9H1612V226.2z"/>
-        <polygon fill="#0d6efd" points="1.1,138 0,217.6 237.4,79.6 238.5,0 "/>
-        <polygon fill="#0d6efd" points="1.1,272.4 0,352 237.4,214 238.5,134.5 "/>
-        <polygon fill="#0d6efd" points="240.1,410.4 239,490 476.4,352 477.5,272.4 "/>
-        <polygon fill="#0d6efd" points="240.1,276 239,355.5 476.4,217.6 477.5,138 "/>
-        <polygon fill="#0d6efd" fill-opacity="0.7" points="0,217.6 239,355.5 240.1,276 1.1,138 "/>
-        <polygon fill="#0d6efd" fill-opacity="0.7" points="237.4,79.6 476.4,217.6 477.5,138 238.5,0 "/>
-        <polygon fill="#0d6efd" fill-opacity="0.7" points="237.4,214 476.4,352 477.5,272.4 238.5,134.5 "/>
-        <polygon fill="#0d6efd" fill-opacity="0.7" points="0,352 239,490 240.1,410.4 1.1,272.4 "/>
-    </svg>
-    PHP %php_version% | v%zaphyr_version%
-</div>
+    <div id="wrapper">
+        <svg width="100" height="28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1735.9 490" xml:space="preserve">
+            <path d="M531.7,307.5l107.7-127.8H535.6v-41.4h160.5v41.4L590.5,307.5h109.2v43.2h-168V307.5z"/>
+            <path d="M801.7,138.3h38.7l92.4,212.4H880l-18.3-45h-82.5l-17.7,45h-51.6L801.7,138.3z M819.7,200.1l-25.8,66h51.9L819.7,200.1z"/>
+            <path d="M954.1,138.3h78.9c11,0,21.4,1,31.2,3c9.8,2,18.3,5.5,25.6,10.4c7.3,4.9,13.1,11.5,17.4,19.8c4.3,8.3,6.5,18.8,6.5,31.3c0,12.4-2,22.8-6,31.2c-4,8.4-9.5,15.1-16.5,20.1c-7,5-15.3,8.5-24.9,10.6c-9.6,2.1-20,3.2-31.2,3.2h-34.2v82.8h-46.8V138.3z M1000.9,228.3h31.2c4.2,0,8.2-0.4,12.2-1.2c3.9-0.8,7.4-2.1,10.5-4.1c3.1-1.9,5.6-4.5,7.5-7.8c1.9-3.3,2.8-7.4,2.8-12.5c0-5.4-1.3-9.8-3.8-13c-2.5-3.3-5.7-5.8-9.6-7.6c-3.9-1.8-8.2-2.9-13-3.5c-4.8-0.5-9.4-0.8-13.8-0.8h-24V228.3z"/>
+            <path d="M1143.1,138.3h46.8v79.2h90.9v-79.2h46.8v212.4h-46.8v-91.8h-90.9v91.8h-46.8V138.3z"/>
+            <path d="M1423,260.1l-79.8-121.8h58.2l45,79.5l47.7-79.5h55.5l-79.8,121.8v90.6H1423V260.1z"/>
+            <path d="M1565.2,138.3h82.2c10.8,0,21,1.1,30.8,3.2c9.7,2.1,18.2,5.6,25.5,10.5c7.3,4.9,13.1,11.5,17.4,19.8c4.3,8.3,6.5,18.7,6.5,31c0,15-3.9,27.8-11.7,38.2s-19.2,17.2-34.2,20l54,89.7h-56.1l-44.4-84.9H1612v84.9h-46.8V138.3zM1612,226.2h27.6c4.2,0,8.6-0.2,13.3-0.5c4.7-0.3,8.9-1.2,12.8-2.7c3.8-1.5,6.9-3.8,9.5-7c2.5-3.2,3.8-7.7,3.8-13.5c0-5.4-1.1-9.7-3.3-12.9c-2.2-3.2-5-5.6-8.4-7.4c-3.4-1.7-7.3-2.8-11.7-3.5c-4.4-0.6-8.7-0.9-12.9-0.9H1612V226.2z"/>
+            <polygon points="1.1,138 0,217.6 237.4,79.6 238.5,0 "/>
+            <polygon points="1.1,272.4 0,352 237.4,214 238.5,134.5 "/>
+            <polygon points="240.1,410.4 239,490 476.4,352 477.5,272.4 "/>
+            <polygon points="240.1,276 239,355.5 476.4,217.6 477.5,138 "/>
+            <polygon fill-opacity="0.7" points="0,217.6 239,355.5 240.1,276 1.1,138 "/>
+            <polygon fill-opacity="0.7" points="237.4,79.6 476.4,217.6 477.5,138 238.5,0 "/>
+            <polygon fill-opacity="0.7" points="237.4,214 476.4,352 477.5,272.4 238.5,134.5 "/>
+            <polygon fill-opacity="0.7" points="0,352 239,490 240.1,410.4 1.1,272.4 "/>
+        </svg>
+        <h1>A modern PHP framework<br>for web applications</h1>
+        <ul id="links">
+            <li><a href="https://zaphyr.org/docs/framework/latest/welcome" target="_blank">Docs</a></li>
+            <li><a href="https://github.com/zaphyr-org" target="_blank">GitHub</a></li>
+        </ul>
+        <p><small>ZAPHYR v%zaphyr_version% | PHP v%php_version%</small></p>
+    </div>
 </body>
 </html>
